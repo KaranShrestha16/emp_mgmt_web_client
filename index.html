@@ -9,17 +9,13 @@
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
     </head>
     <body>
         <div class="container">
             <!-- Codrops top bar -->
-           
-            <header>
-                <h1>Login and Sign Up</h1>
-            </header>
+        
             <section>				
                 <div id="container_demo" >
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
@@ -27,7 +23,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                         
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
@@ -42,17 +38,17 @@
 									<label for="loginkeeping">Keep me logged in</label>
 								</p>
                                 <p class="login button"> 
-                                    <input type="submit" value="Login" /> 
+                                    <input type="submit" id="loginn" value="Login" /> 
 								</p>
                                 <p class="change_link">
 									Not a member yet ?
 									<a href="#toregister" class="to_register">Join us</a>
 								</p>
-                            </form>
+                           
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                    
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
@@ -70,33 +66,51 @@
                                 </p>
                         
                                 <p>
-                                    <label for="emailsignup" class="youmail" data-icon="d"> Your Salary</label>
-                                    <input id="emailsignup" name="salary" required="required" type="number" placeholder="30000" />
+                                    <label for="emailsignup" class="youmail" data-icon="p"> Your Salary</label>
+                                    <input  name="salary" required="required" type="number" placeholder="30000" />
                                 </p>
 
                                 <p>
-                                    <label for="emailsignup" class="youmail" data-icon="s"> Your Age</label>
-                                    <input id="emailsignup" name="age" required="required" type="number" placeholder="20" />
+                                    <label for="emailsignup" class="youmail" data-icon="p"> Your Age</label>
+                                    <input  name="age" required="required" type="number" placeholder="20" />
                                 </p>
                                 <p>
-                                    <label for="usernamesignup" class="uname" data-icon="f">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                    <label for="usernamesignup" class="uname" data-icon="u">Image</label>
+                                    <input  name="usernamesignup" required="required" type="file" />
                                 </p>
 
                                
                                 <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
+									<input type="submit" value="Signup"/> 
 								</p>
                                 <p class="change_link">  
 									Already a member ?
 									<a href="#tologin" class="to_register"> Go and log in </a>
 								</p>
-                            </form>
+                           
                         </div>
 						
                     </div>
                 </div>  
             </section>
         </div>
+
+        <script>
+           const button =document.getElementById('loginn');
+           button.addEventListener('click',function onClick(e){
+              const usernameNode= document.getElementById('username');
+              const passwordNode= document.getElementById('password');
+              const usernameValue= usernameNode.value;
+              const passwordValue=passwordNode.value;
+              console.log(usernameValue,passwordValue);
+
+              // retrive password
+              // send a request to express server(featch or axois)
+              // validate the user
+              // finaly send the user to dashboard
+           })
+            
+        </script>
+
     </body>
 </html>
